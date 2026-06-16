@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Asegura que el contenedor ocupe toda la pantalla */
+.app-container-home, .app-container-global {
+  min-height: 100vh;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  padding: 30px;
+}
+
+/* Fondo exclusivo para la vista Home */
+.app-container-home {
+  background: linear-gradient(90deg, #18181b 0%,  #27272a 80%); /* O usa un background-image */
+}
+
+/* Fondo para Dashboard, Movimientos, Reportes, etc. */
+.app-container-global {
+  background-color: #18181b;
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 8px;
+
+    background: #045ee6;
+    border-radius: 999px;
+
+    transition: width 0.3s ease;
+}
+
+/* Cuando pasas el mouse */
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Cuando está activa la ruta */
+.nav-link.active::after {
+    width: 100%;
+}
+
