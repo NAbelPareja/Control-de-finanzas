@@ -5,6 +5,7 @@ export const MovimientoForm = ({
   handleGuardarDatos,
   handleInputChange,
 }) => {
+  
   return (
     <div className="bg-zinc-800 w-fit py-5 px-2 border-solid border-1 border-zinc-600 ml-10 mr-10 rounded-md ">
       <h2 className="">Agregar movimiento</h2>

@@ -2,32 +2,15 @@ import { FaArrowDown, FaPiggyBank, FaWallet } from "react-icons/fa"
 
 
 export const ResumenMovimientos = ({listaMovimientos}) => {
-    console.log(listaMovimientos.map(valor => valor.monto))
-    const listaIngresos = listaMovimientos.map(numero => 
-        {
-            if(numero.tipo == "ingreso"){
-                return parseInt(numero.monto)
-            }
-        })
+    const ingresosTotal = listaMovimientos.filter((mov) => mov.tipo === "ingreso").reduce((acumulador, valorActual)=>
+        acumulador + Number(valorActual.monto),0)
 
-    const listaGastos = listaMovimientos.map(numero => 
-        {
-            if(numero.tipo == "gasto"){
-                return parseInt(numero.monto)
-            }
-        })
-
-    const ingresosTotal = listaIngresos.reduce((acumulador, valorActual = 0 )=>{
-        return acumulador + valorActual
-    },0)
-
-    const gastosTotal = listaGastos.reduce((acumulador, valorActual= 0)=>{
-        return acumulador + valorActual
-    },0)
+    const gastosTotal = listaMovimientos.filter( (mov) => mov.tipo === "gasto").reduce((acumulador, valorActual) => 
+        acumulador + Number(valorActual.monto), 0)
 
     const saldo = ingresosTotal - gastosTotal
 
-
+    
   return (
     <div className="h-fit flex flex-row  justify-between  px-10 gap-10">
         <div className="bg-zinc-800 pr-35 pl-5 py-2 rounded-md text-left border-solid border-1 border-zinc-600">

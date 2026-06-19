@@ -1,6 +1,6 @@
-export const MovimientoTable = ({ listaMovimientos, eliminarMovimiento }) => {
+export const MovimientoTable = ({ listaMovimientos, eliminarMovimiento, handleEditarMovimiento}) => {
   return (
-    <div className=" bg-zinc-800 border-solid border-1 border-zinc-600  rounded-md  px-5 py-4 mt-5">
+    <div className=" bg-zinc-800 border-solid border-1 border-zinc-600  rounded-md  px-5 py-4 mt-5 max-h-75 overflow-y-auto">
       <table className="w-full">
         <thead className="text-zinc-400  border-b border-zinc-700">
           <tr>
@@ -22,8 +22,7 @@ export const MovimientoTable = ({ listaMovimientos, eliminarMovimiento }) => {
               <td className="w-15 break-words text-right pr-3 font-semibold">{value.monto}</td>
               <td>{new Date(value.fecha).toLocaleDateString("es-PE")}</td>
               <td className="w-40 text-center">
-                <button
-                  
+                <button onClick={ () => handleEditarMovimiento(value.id)}
                   className="bg-green-700 px-2 py-1 rounded-md mr-2"
                 >
                   Editar

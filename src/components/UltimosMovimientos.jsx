@@ -1,46 +1,49 @@
-
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
-export const UltimosMovimientos = () => {
+
+export const UltimosMovimientos = ({ listaMovimientos }) => {
+  const ultimosMovimientos = listaMovimientos.slice(0, 5).map((valor) => valor);
+
+  //construimos un formateador
+
+  const formateador = new Intl.DateTimeFormat("es", {
+    day: "numeric",
+    month: "short",
+  });
+
   return (
     <div className="bg-zinc-800 p-5 border-solid border-1 border-zinc-600 rounded-md ">
-      <table>
-        <thead className="py-3">
-          <tr>
-            <th className="pr-50 pb-5">Ultimos Movimientos</th>
-            <th className="text-blue-500 pb-5">
-              <a href="">Ver todas</a>
-            </th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>
-              <td className="pr-5"><FaArrowUp className="text-green-400"/></td>
-              <td>
-                Supermercado <br />{" "}
-                <span className="text-zinc-400">alimentacion</span>
-              </td>
-            </td>
-            <td>
-              -$85.00 <br /> <span className="text-zinc-400">20 jul</span>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <td className="pr-5"><FaArrowDown className="text-red-400"/></td>
-              <td>
-                Supermercado <br />{" "}
-                <span className="text-zinc-400">alimentacion</span>
-              </td>
-            </td>
-            <td>
-              -$85.00 <br /> <span className="text-zinc-400">20 jul</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="flex flex-row justify-between gap-40 mb-5">
+        <h2>Ultimos Movimientos</h2>
+        <h2>Detalles</h2>
+      </div>
+      {ultimosMovimientos.map((valor) => (
+        <div key={valor.id} className="flex flex-row justify-between mb-2">
+          <div className="flex flex-row items-center">
+            <div className="p-2">
+              {valor.tipo === "ingreso" ? (
+                  <FaArrowUp className="text-green-400 " />
+              ) : (
+                  <FaArrowDown className="text-red-400" />
+              )}
+            </div>
+            <div>
+              <h2>
+                {valor.descripcion} <br />
+                <span className="text-zinc-400">{valor.categoria}</span>
+              </h2>
+            </div>
+          </div>
+          <h2>
+            $ {valor.monto}.00
+            <br />
+            <span className="text-zinc-400">
+              {formateador
+                .format(new Date(valor.fecha + "T00:00:00"))
+                .replace(".", "")}
+            </span>
+          </h2>
+        </div>
+      ))}
     </div>
   );
 };

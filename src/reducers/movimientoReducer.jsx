@@ -6,7 +6,7 @@ export const movimientoReducer = (state, action) =>{
             return [...state, action.payload]
         case "[MOVIMIENTO] editar movimiento":
             return state.map((movimiento) =>{
-                if(action.payload == movimiento.id)
+                if(action.payload.id === movimiento.id)
                     return{ 
                         ...movimiento,
                         tipo: action. payload.tipo,

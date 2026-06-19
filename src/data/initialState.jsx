@@ -1,11 +1,5 @@
+export const init = () => {
+  const datos = localStorage.getItem("movimiento");
 
-export const initialState = [
-    {
-        id: 1,
-        tipo: "ingreso",
-        categorias: "Salario",
-        descripcion: "Pago mensual",
-        monto: 3500,
-        fecha: "2026-06-17"
-    }
-]
+  return datos ? JSON.parse(datos) : [];
+};

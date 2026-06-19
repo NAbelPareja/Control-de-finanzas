@@ -1,11 +1,11 @@
 import { useReducer } from "react"
 import { movimientoReducer } from "../reducers/movimientoReducer"
-import { initialState } from "../data/initialState"
+import { init } from "../data/initialState"
 
 
 export const useMovimientos = () => {
-  
-    const [listaMovimientos, dispatch] = useReducer(movimientoReducer, initialState)
+    
+    const [listaMovimientos, dispatch] = useReducer(movimientoReducer, [],init)
 
     const agregarMovimiento = (movimiento) => {
         const nuevaNota = {
