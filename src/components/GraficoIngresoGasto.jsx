@@ -1,7 +1,7 @@
 import { TbPointFilled } from "react-icons/tb";
 import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar } from "recharts";
 
-export const GraficoIngresoGasto = ({ listaMovimientos }) => {
+export const GraficoIngresoGasto = ({listaMovimientos }) => {
   const meses = [
     "Enero",
     "Febrero",

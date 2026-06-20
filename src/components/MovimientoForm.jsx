@@ -37,7 +37,7 @@ export const MovimientoForm = ({
             name="categoria"
             value={form.categoria}
             onChange={handleInputChange}
-            required
+            required                                                  
           >
             <option value="">--Seleccionar--</option>
             <option value="alimentos">Alimentos</option>

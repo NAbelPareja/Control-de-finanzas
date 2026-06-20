@@ -1,4 +1,4 @@
-export const MovimientoTable = ({ listaMovimientos, eliminarMovimiento, handleEditarMovimiento}) => {
+export const MovimientoTable = ({ listaMovimientos, eliminarMovimiento, handleEditarMovimiento, listaFiltrada}) => {
   return (
     <div className=" bg-zinc-800 border-solid border-1 border-zinc-600  rounded-md  px-5 py-4 mt-5 max-h-75 overflow-y-auto">
       <table className="w-full">
@@ -12,7 +12,7 @@ export const MovimientoTable = ({ listaMovimientos, eliminarMovimiento, handleEd
           </tr>
         </thead>
         <tbody>
-          {listaMovimientos.map((value) => (
+          {listaFiltrada.map((value) => (
             <tr
               key={value.id}
               className="hover:bg-zinc-700 transition-colors duration-200"

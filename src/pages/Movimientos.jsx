@@ -15,6 +15,40 @@ export const Movimientos = () => {
   } = useMovimientos();
   const { form, setForm, handleInputChange } = useFormularioMovimiento();
 
+  const [buscarDescripcion, setBuscarDescripcion] = useState("")
+  const [buscarcategoria, setBuscarcategoria] = useState("")
+  const [buscarFecha, setBuscarFecha] = useState("")
+  const listaFiltrada = listaMovimientos.filter(valor =>{
+    const descripcion = valor.descripcion.toLowerCase()
+    const categoria = valor.categoria.toLowerCase()
+    const fecha = valor.fecha
+
+
+    console.log("valor local",typeof(descripcion), "valor input", typeof(buscarDescripcion))
+
+    const cumpleDes = 
+    !buscarDescripcion || descripcion.includes(buscarDescripcion.toLowerCase())
+    
+    const cumpleCat  =
+    !buscarcategoria || categoria.includes(buscarcategoria.toLowerCase())
+    
+    const cumpleFecha = 
+    !buscarFecha || fecha === buscarFecha
+    return cumpleDes && cumpleCat && cumpleFecha
+  })
+  console.log("lsita filtrada",listaFiltrada)
+
+  const handleBuscarDescripcion = (e) =>{
+    setBuscarDescripcion(e.target.value)
+  }
+  const handleBuscarcategoria = (e) =>{
+    setBuscarcategoria(e.target.value)
+  }
+  const handleBuscarFecha = (e) =>{
+    setBuscarFecha(e.target.value)
+  }
+  
+
   const [idEditando, setIdEditando] = useState(null);
 
   const handleGuardarDatos = (e) => {
@@ -59,12 +93,21 @@ export const Movimientos = () => {
           handleInputChange={handleInputChange}
         ></MovimientoForm>
         <div className="flex flex-col flex-1 pr-10">
-          <BuscadorMovimiento></BuscadorMovimiento>
+          <BuscadorMovimiento 
+          buscarDescripcion= {buscarDescripcion}
+          buscarcategoria = {buscarcategoria}
+          buscarFecha = {buscarFecha}
+          handleBuscarDescripcion= {handleBuscarDescripcion}
+          handleBuscarcategoria = {handleBuscarcategoria}
+          handleBuscarFecha = { handleBuscarFecha}
+          listaFiltrada = {listaFiltrada}
+          ></BuscadorMovimiento>
           <MovimientoTable
             listaMovimientos={listaMovimientos}
             editarMovimientos={editarMovimiento}
             eliminarMovimiento={eliminarMovimiento}
             handleEditarMovimiento = {handleEditarMovimiento}
+            listaFiltrada = {listaFiltrada}
           ></MovimientoTable>
         </div>
       </div>

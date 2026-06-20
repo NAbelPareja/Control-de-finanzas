@@ -1,4 +1,4 @@
-export const FiltrReportes = ({buscarFecha, handleBuscarFecha}) => {
+export const FiltrReportes = ({buscarFecha, handleBuscarFecha, buscarMes, handleBuscarMes}) => {
   return (
     <div className="flex flex-row  h-fit bg-zinc-800 border-solid border-1 border-zinc-600 px-5 py-2 rounded-md  mx-10">
       <div className="flex flex-row flex-1 justify-start">
@@ -6,11 +6,29 @@ export const FiltrReportes = ({buscarFecha, handleBuscarFecha}) => {
           <h2 className="text-xs text-zinc-400">Periodo</h2>
         </div>
         <div className="flex flex-col px-5">
-          <label className="text-xs text-zinc-400 py-1">Mes</label>
-          <input
-            className="border-solid border-1 border-zinc-600 rounded-md"
-            type="month"
-          />
+          <label htmlFor="mes" className="text-xs text-zinc-400 py-1">Mes</label>
+          <select 
+          className="border-solid border-1 border-zinc-600 rounded-md"
+          name="mes" 
+          type="text"
+          value={buscarMes}
+          onChange={handleBuscarMes}
+          required
+          >
+            <option value="">Select</option>
+            <option value="enero">Enero</option>
+            <option value="febrero">Febrero</option>
+            <option value="marzo">Marzo</option>
+            <option value="abril">Abril</option>
+            <option value="mayo">Mayo</option>
+            <option value="junio">Junio</option>
+            <option value="julio">Julio</option>
+            <option value="agosto">Agosto</option>
+            <option value="septiembre">Septiembre</option>
+            <option value="octubre">Octubre</option>
+            <option value="noviembre">Noviembre</option>
+            <option value="diciembre">Diciembre</option>
+          </select>
         </div>
         <div className="flex flex-col ">
           <label htmlFor ="año" className="text-xs text-zinc-400 py-1">Año</label>

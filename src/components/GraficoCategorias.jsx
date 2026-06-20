@@ -1,5 +1,5 @@
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
-export const GraficoCategorias = ({ listaMovimientos, listaFiltrada }) => {
+export const GraficoCategorias = ({listaFiltrada }) => {
   
   const COLORS = [
     "oklch(48.8% 0.243 264.376)",
