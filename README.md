@@ -1,18 +1,69 @@
-# React + Vite
+# 💰 Gestor de Gastos Personales
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Vista previa](src/assets/home.png)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Aplicación desarrollada con <strong>React + Tailwind CSS</strong> para administrar ingresos y gastos personales con gráficos y reportes interactivos.
 
-## React Compiler
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## ✨ Características
 
-## Expanding the ESLint configuration
+* 💵 Registro de ingresos y gastos.
+* ✏️ Edición de movimientos.
+* 🗑️ Eliminación de movimientos.
+* 📊 Dashboard financiero.
+* 📈 Reportes con gráficos de barras y circular.
+* 🔎 Filtros por mes y año.
+* 💾 Persistencia mediante LocalStorage.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📷 Vista previa
+
+### Dashboard
+
+![Vista previa](src/assets/dashboard.png)
+
+### Movimientos
+
+![Vista previa](src/assets/movimientos.png)
+### Reportes
+
+![Vista previa](src/assets/reportes.png)
+---
+
+## 🛠️ Tecnologías
+
+* React
+* React Router DOM
+* Tailwind CSS
+* Recharts
+* React Icons
+* useReducer
+* LocalStorage
+
+---
+
+
+## 📂 Funcionalidades
+
+* Dashboard con resumen financiero.
+* CRUD completo de movimientos.
+* Reportes gráficos.
+* Filtros dinámicos por fecha.
+* Persistencia de datos en el navegador.
+
+---
+## 🌐 Demo
+
+[Próximamente disponible en Netlify.](https://gestor-notas-react.netlify.app)
+
+---
+
+## 👨‍💻 Autor
+
+**Abel Pareja**
+
+Proyecto desarrollado como práctica de React, manejo de estado con `useReducer`, almacenamiento local y visualización de datos.
