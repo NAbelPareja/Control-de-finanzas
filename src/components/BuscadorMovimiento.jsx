@@ -5,9 +5,12 @@ export const BuscadorMovimiento = ({
   handleBuscarDescripcion,
   handleBuscarcategoria,
   handleBuscarFecha,
+  categorias
 }) => {
-
-
+  const todasCategorias = [
+    ...categorias.ingresos,
+    ...categorias.gastos
+  ]
 
   return (
     <div className="flex flex-row bg-zinc-800 h-fit justify-between  border-solid border-1 border-zinc-600  rounded-md gap-10 px-5 py-4">
@@ -29,15 +32,18 @@ export const BuscadorMovimiento = ({
           Categoria
         </label>
         <select
-          className="border-solid border-1 border-zinc-600  rounded-md mt-2 py-1 w-35"
+          className="border-solid border-1 border-zinc-600  rounded-md mt-2 py-1 w-35 bg-zinc-800"
           name="categoria"
           value={buscarcategoria}
           onChange={handleBuscarcategoria}
         >
-          <option value="">-- Seleccionar --</option>
-          <option value="alimentos">Alimentos</option>
-          <option value="vestimenta">Vestimenta</option>
-          <option value="hogar">Hogar</option>
+          <option value="">Seleccione</option>
+          {
+            todasCategorias.map( valor => 
+              <option value={valor}>{valor}</option>
+            ) 
+          }
+
         </select>
       </div>
       <div className="flex flex-col ">

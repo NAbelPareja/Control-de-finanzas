@@ -2,7 +2,6 @@ import { ResumenMovimientos } from "../components/ResumenMovimientos";
 import { FiltrReportes } from "../components/FiltrReportes";
 import { GraficoCategorias } from "../components/GraficoCategorias";
 import { GraficoIngresoGasto } from "../components/GraficoIngresoGasto";
-import { TablaResumenCategoria } from "../components/TablaResumenCategoria";
 import { useMovimientos } from "../hooks/useMovimientos";
 import { useState } from "react";
 export const Reportes = () => {
@@ -46,7 +45,7 @@ export const Reportes = () => {
   };
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-10 w-full mx-10">
       <ResumenMovimientos
         listaMovimientos={listaMovimientos}
       ></ResumenMovimientos>
@@ -56,7 +55,7 @@ export const Reportes = () => {
         handleBuscarMes = {handleBuscarMes}
         buscarMes={buscarMes}
       ></FiltrReportes>
-      <div className="flex flex-row mx-10 gap-5">
+      <div className="flex flex-row justify-between ">
         <GraficoCategorias
           listaMovimientos={listaMovimientos}
           listaFiltrada={listaFiltrada}
@@ -65,7 +64,6 @@ export const Reportes = () => {
           listaMovimientos={listaMovimientos}
         ></GraficoIngresoGasto>
       </div>
-      <TablaResumenCategoria></TablaResumenCategoria>
     </div>
   );
 };

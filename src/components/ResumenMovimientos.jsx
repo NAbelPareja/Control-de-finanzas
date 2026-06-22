@@ -12,7 +12,7 @@ export const ResumenMovimientos = ({listaMovimientos}) => {
 
     
   return (
-    <div className="h-fit flex flex-row  justify-between  px-10 gap-10">
+    <div className="flex flex-row  justify-between w-full">
         <div className="bg-zinc-800 pr-35 pl-5 py-2 rounded-md text-left border-solid border-1 border-zinc-600">
             <div className="flex items-center gap-2">
             <FaWallet className="text-green-400"/>

@@ -7,6 +7,18 @@ import { useEffect, useState } from "react";
 import { useFormularioMovimiento } from "../hooks/useFormularioMovimiento";
 
 export const Movimientos = () => {
+
+  const categorias = {
+  ingresos: ["Salario", "Freelance", "Inversiones", "Ventas", "Otros"],
+  gastos: [
+    "Vivienda",
+    "Comida",
+    "Pasaje",
+    "Salud",
+    "Otros",
+  ],
+};
+
   const {
     listaMovimientos,
     editarMovimiento,
@@ -36,7 +48,6 @@ export const Movimientos = () => {
     !buscarFecha || fecha === buscarFecha
     return cumpleDes && cumpleCat && cumpleFecha
   })
-  console.log("lsita filtrada",listaFiltrada)
 
   const handleBuscarDescripcion = (e) =>{
     setBuscarDescripcion(e.target.value)
@@ -82,17 +93,18 @@ export const Movimientos = () => {
   }, [listaMovimientos]);
 
   return (
-    <div className="flex flex-col gap-10 ">
+    <div className="flex flex-col justify-between gap-10 w-full mx-10">
       <ResumenMovimientos
         listaMovimientos={listaMovimientos}
       ></ResumenMovimientos>
-      <div className="flex flex-row  ">
+      <div className="flex flex-row justify-between w-full gap-10 ">
         <MovimientoForm
           form={form}
           handleGuardarDatos={handleGuardarDatos} 
           handleInputChange={handleInputChange}
+          categorias = {categorias}
         ></MovimientoForm>
-        <div className="flex flex-col flex-1 pr-10">
+        <div className="flex flex-col flex-1 w-full">
           <BuscadorMovimiento 
           buscarDescripcion= {buscarDescripcion}
           buscarcategoria = {buscarcategoria}
@@ -101,6 +113,7 @@ export const Movimientos = () => {
           handleBuscarcategoria = {handleBuscarcategoria}
           handleBuscarFecha = { handleBuscarFecha}
           listaFiltrada = {listaFiltrada}
+          categorias ={categorias}
           ></BuscadorMovimiento>
           <MovimientoTable
             listaMovimientos={listaMovimientos}

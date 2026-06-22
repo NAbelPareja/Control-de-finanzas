@@ -55,7 +55,7 @@ export const GraficoIngresoGasto = ({listaMovimientos }) => {
         </div>
       </div>
       <div className="pt-5">
-        <BarChart width={450} height={280} data={resumenMeses}>
+        <BarChart width={450} height={270} data={resumenMeses}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="mes" />
           <YAxis /> 

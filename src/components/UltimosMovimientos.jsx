@@ -1,7 +1,7 @@
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 export const UltimosMovimientos = ({ listaMovimientos }) => {
-  const ultimosMovimientos = listaMovimientos.slice(0, 5).map((valor) => valor);
+  const ultimosMovimientos = listaMovimientos.slice(-5).map((valor) => valor);
 
   //construimos un formateador
 
@@ -41,7 +41,7 @@ export const UltimosMovimientos = ({ listaMovimientos }) => {
                 .format(new Date(valor.fecha + "T00:00:00"))
                 .replace(".", "")}
             </span>
-          </h2>
+          </h2> 
         </div>
       ))}
     </div>

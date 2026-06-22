@@ -1,6 +1,6 @@
 export const FiltrReportes = ({buscarFecha, handleBuscarFecha, buscarMes, handleBuscarMes}) => {
   return (
-    <div className="flex flex-row  h-fit bg-zinc-800 border-solid border-1 border-zinc-600 px-5 py-2 rounded-md  mx-10">
+    <div className="flex flex-row  h-fit bg-zinc-800 border-solid border-1 border-zinc-600 px-5 py-2 rounded-md">
       <div className="flex flex-row flex-1 justify-start">
         <div className="flex flex-col justify-center ">
           <h2 className="text-xs text-zinc-400">Periodo</h2>
@@ -8,7 +8,7 @@ export const FiltrReportes = ({buscarFecha, handleBuscarFecha, buscarMes, handle
         <div className="flex flex-col px-5">
           <label htmlFor="mes" className="text-xs text-zinc-400 py-1">Mes</label>
           <select 
-          className="border-solid border-1 border-zinc-600 rounded-md"
+          className="border-solid border-1 border-zinc-600 rounded-md bg-zinc-800"
           name="mes" 
           type="text"
           value={buscarMes}

@@ -58,7 +58,7 @@ Aplicación desarrollada con <strong>React + Tailwind CSS</strong> para administ
 ---
 ## 🌐 Demo
 
-[Próximamente disponible en Netlify.](https://gestor-notas-react.netlify.app)
+[Demo en Netlify.](https://gastosper.netlify.app/movimientos)
 
 ---
 
