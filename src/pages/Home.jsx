@@ -1,7 +1,7 @@
 import homeImg from "../assets/homeImg.jpg";
 export const Home = () => {
   return (
-    <div>
+    <div className="pb-20 md:pb-0">
       <div className="flex flex-col py-5 md:flex-row   mx-auto my-auto md:gap-5 lg:gap-20 md:mr-20 md:ml-50">
         <div className="flex flex-col b">
           <h5 className="w-fit text-xs bg-blue-950 text-blue-300 font-bold  py-1 px-2 rounded-3xl">

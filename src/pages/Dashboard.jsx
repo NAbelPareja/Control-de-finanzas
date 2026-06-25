@@ -9,7 +9,7 @@ export const Dashboard = () => {
   const {listaMovimientos} = useMovimientos()
 
   return (
-    <div className="flex flex-col gap-10 md:mr-20 md:ml-50 w-full ">
+    <div className="flex flex-col gap-10 md:mr-20 md:ml-50 w-full pb-20 md:pb-0">
       <ResumenMovimientos listaMovimientos = {listaMovimientos}></ResumenMovimientos>
       <div className="flex  flex-col gap-5 lg:flex-row justify-between lg:gap-5 w-full ">
         <UltimosMovimientos listaMovimientos={listaMovimientos}></UltimosMovimientos>
