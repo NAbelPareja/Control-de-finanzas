@@ -45,7 +45,7 @@ export const Reportes = () => {
   };
 
   return (
-    <div className="flex flex-col gap-10 w-full md:mx-20">
+    <div className="flex flex-col gap-10 w-full md:mr-20 md:ml-50">
       <ResumenMovimientos
         listaMovimientos={listaMovimientos}
       ></ResumenMovimientos>

@@ -47,7 +47,7 @@ export const FiltrReportes = ({buscarFecha, handleBuscarFecha, buscarMes, handle
         </div>
       </div>
       <div className="flex flex-col justify-center">
-        <button className="bg-blue-600 px-3 py-1 rounded-md hover:bg-blue-700 transition">Aplicar</button>
+        <button className="hidden md:block bg-blue-600 px-3 py-1 rounded-md hover:bg-blue-700 transition">Aplicar</button>
       </div>
     </div>
   );

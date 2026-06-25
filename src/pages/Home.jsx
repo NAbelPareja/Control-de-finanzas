@@ -2,7 +2,7 @@ import homeImg from "../assets/homeImg.jpg";
 export const Home = () => {
   return (
     <div>
-      <div className="flex flex-col py-5 md:flex-row   mx-auto my-auto md:gap-5 lg:gap-20 md:px-20">
+      <div className="flex flex-col py-5 md:flex-row   mx-auto my-auto md:gap-5 lg:gap-20 md:mr-20 md:ml-50">
         <div className="flex flex-col b">
           <h5 className="w-fit text-xs bg-blue-950 text-blue-300 font-bold  py-1 px-2 rounded-3xl">
             FINANZAS PERSONALES
@@ -18,7 +18,7 @@ export const Home = () => {
         </div>
         <img className="h-90 w-200  lg:px-15 rounded-md" src={homeImg} alt="" />
       </div>
-      <div className="md:gap-5 lg:gap-20 md:px-20">
+      <div className="md:gap-5 lg:gap-20 md:mr-20 md:ml-50">
         <button className="bg-blue-600 w-fit text-xm py-1 px-3 rounded-md hover:bg-blue-700">
           Comenzar ahora
         </button>
