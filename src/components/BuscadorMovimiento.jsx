@@ -13,7 +13,7 @@ export const BuscadorMovimiento = ({
   ]
 
   return (
-    <div className="flex flex-row bg-zinc-800 h-fit justify-between  border-solid border-1 border-zinc-600  rounded-md gap-10 px-5 py-4">
+    <div className="flex flex-col px-2 xl:flex-row lg:gap-2 lg:px-5 bg-zinc-800 h-fit justify-between  border-solid border-1 border-zinc-600  rounded-md   py-4">
       <div className="flex flex-col ">
         <label className="text-zinc-400 text-xs " htmlFor="descripcion">
           Buscar descripcion

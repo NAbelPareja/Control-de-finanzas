@@ -1,7 +1,15 @@
 import { TbPointFilled } from "react-icons/tb";
-import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar } from "recharts";
+import {
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Bar,
+  ResponsiveContainer,
+} from "recharts";
 
-export const GraficoIngresoGasto = ({listaMovimientos }) => {
+export const GraficoIngresoGasto = ({ listaMovimientos }) => {
   const meses = [
     "Enero",
     "Febrero",
@@ -19,7 +27,7 @@ export const GraficoIngresoGasto = ({listaMovimientos }) => {
   const resumenMeses = listaMovimientos.reduce((acc, mov) => {
     const indiceMes = new Date(mov.fecha).getMonth();
     const nombreMes = meses[indiceMes];
-    
+
     let mes = acc.find((item) => item.mes === nombreMes);
 
     if (!mes) {
@@ -42,7 +50,7 @@ export const GraficoIngresoGasto = ({listaMovimientos }) => {
   }, []);
 
   return (
-    <div className="bg-zinc-800 py-3 px-5 border-solid border-1 border-zinc-600 rounded-md">
+    <div className="bg-zinc-800 w-full py-3 px-5 border-solid border-1 border-zinc-600 rounded-md">
       <div className="flex flex-row px-5 justify-between">
         <h2 className="font-bold pr-10">Ingresos vs Gastos</h2>
         <div className="flex items-center">
@@ -54,15 +62,25 @@ export const GraficoIngresoGasto = ({listaMovimientos }) => {
           <p className="text-yellow-500">Gastos</p>
         </div>
       </div>
-      <div className="pt-5">
-        <BarChart width={450} height={270} data={resumenMeses}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="mes" />
-          <YAxis /> 
-          <Tooltip />
-          <Bar dataKey="ingresos" fill="oklch(42.4% 0.199 265.638)" radius={[8, 8, 0, 0]}/>
-          <Bar dataKey="gastos" fill="oklch(68.1% 0.162 75.834)" radius={[8, 8, 0, 0]} />
-        </BarChart>
+      <div className="pt-5 w-full h-[200px] md:h-[250px] lg:h-[300px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={resumenMeses}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="mes" />
+            <YAxis/>
+            <Tooltip/>
+            <Bar
+              dataKey="ingresos"
+              fill="oklch(42.4% 0.199 265.638)"
+              radius={[8, 8, 0, 0]}
+            />
+            <Bar
+              dataKey="gastos"
+              fill="oklch(68.1% 0.162 75.834)"
+              radius={[8, 8, 0, 0]}
+            />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );

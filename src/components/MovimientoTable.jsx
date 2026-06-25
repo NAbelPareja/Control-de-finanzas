@@ -1,7 +1,7 @@
 export const MovimientoTable = ({eliminarMovimiento, handleEditarMovimiento, listaFiltrada}) => {
   return (
-    <div className=" bg-zinc-800 border-solid border-1 border-zinc-600  rounded-md  px-5 py-4 mt-5 max-h-75 overflow-y-auto">
-      <table className="w-full">
+    <div className="overflow-x-auto bg-zinc-800 border-solid border-1 border-zinc-600  rounded-md  px-2 lg:px-2 xl:px-5 py-4 mt-5 max-h-75 overflow-y-auto">
+      <table className="w-full min-w-[400px]">
         <thead className="text-zinc-400  border-b border-zinc-700">
           <tr>
             <th className=" text-left py-1 ">Descripcion</th>
@@ -23,7 +23,7 @@ export const MovimientoTable = ({eliminarMovimiento, handleEditarMovimiento, lis
               <td>{new Date(value.fecha).toLocaleDateString("es-PE")}</td>
               <td className="w-40 text-center">
                 <button onClick={ () => handleEditarMovimiento(value.id)}
-                  className="bg-green-700 px-2 py-1 rounded-md mr-2"
+                  className="bg-green-700 px-2 py-1 rounded-md md:mr-2"
                 >
                   Editar
                 </button>

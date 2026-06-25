@@ -12,7 +12,7 @@ export const UltimosMovimientos = ({ listaMovimientos }) => {
 
   return (
     <div className="bg-zinc-800 p-5 border-solid border-1 border-zinc-600 rounded-md ">
-      <div className="flex flex-row justify-between gap-40 mb-5">
+      <div className="flex flex-row justify-between gap-5 md:gap-20 lg:gap-40 mb-5">
         <h2>Ultimos Movimientos</h2>
         <h2>Detalles</h2>
       </div>

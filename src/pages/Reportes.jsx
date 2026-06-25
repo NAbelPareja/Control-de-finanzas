@@ -45,7 +45,7 @@ export const Reportes = () => {
   };
 
   return (
-    <div className="flex flex-col gap-10 w-full mx-10">
+    <div className="flex flex-col gap-10 w-full md:mx-20">
       <ResumenMovimientos
         listaMovimientos={listaMovimientos}
       ></ResumenMovimientos>
@@ -55,7 +55,7 @@ export const Reportes = () => {
         handleBuscarMes = {handleBuscarMes}
         buscarMes={buscarMes}
       ></FiltrReportes>
-      <div className="flex flex-row justify-between ">
+      <div className="flex flex-col lg:flex-row justify-between gap-2 md:gap-5 lg:gap-10">
         <GraficoCategorias
           listaMovimientos={listaMovimientos}
           listaFiltrada={listaFiltrada}

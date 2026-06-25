@@ -7,16 +7,16 @@ import { GiReceiveMoney } from "react-icons/gi";
 
 export const Navbar = () => {
   return (
-    <div className="font-bold px-7 py-5">
+    <div className="font-bold px-1 md:px-5 lg:px-7 py-5">
       <ul>
         <li className="pb-15 text-2xl">
           <div className="flex items-center- gap-2">
-            <GiReceiveMoney className="text-3xl "/>
+            <GiReceiveMoney className="text-3xl " />
             <h2 className="font-normal">
               Gas<span className="font-bold text-blue-500">Per</span>
             </h2>
           </div>
-        <p className="text-xs font-normal">Control de finanzas</p>
+          <p className="text-xs font-normal">Control de finanzas</p>
         </li>
         <li className="py-5 ">
           <div className="flex gap-2 items-center">

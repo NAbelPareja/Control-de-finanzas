@@ -93,18 +93,18 @@ export const Movimientos = () => {
   }, [listaMovimientos]);
 
   return (
-    <div className="flex flex-col justify-between gap-10 w-full mx-10">
+    <div className="flex flex-col justify-between gap-10 w-full md:mx-20">
       <ResumenMovimientos
         listaMovimientos={listaMovimientos}
       ></ResumenMovimientos>
-      <div className="flex flex-row justify-between w-full gap-10 ">
+      <div className="flex flex-col lg:flex-row justify-between w-full gap-2 xl:gap-10 ">
         <MovimientoForm
           form={form}
           handleGuardarDatos={handleGuardarDatos} 
           handleInputChange={handleInputChange}
           categorias = {categorias}
         ></MovimientoForm>
-        <div className="flex flex-col flex-1 w-full">
+        <div className="flex flex-col w-full">
           <BuscadorMovimiento 
           buscarDescripcion= {buscarDescripcion}
           buscarcategoria = {buscarcategoria}
